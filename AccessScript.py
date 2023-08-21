@@ -44,6 +44,7 @@ if(argv1 == "help"):
 	print("  help            Show This Help Message and Exit")
 	print("  deleteSQS       Deletes SQS Messages Following Read")
 	print("  SQSCount        Displays # of Messages in SQS Queue and Exit")
+	print("	 clearDB         Clears PostgreSQL Table of All Rows")
 	print("Example:")
 	print("  python AccessScript.py deleteSQS")
 	exit()
