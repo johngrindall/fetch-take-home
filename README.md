@@ -7,15 +7,15 @@ Thank you for considering my application to Fetch! Here's my submission, feel fr
 - I've written the program in Python, so no need to install anything. Additionally the script will install all dependencies automatically from the requirements.txt file included in the repo.
 
 ## Usage
-- The project was designed to be run using python3, it includes 4 primary functions, outlined below.
+The project was designed to be run using python3, it includes 4 primary functions, outlined below.
 
-Usage: python3 AccessScript.py [options]
+- Usage: python3 AccessScript.py [options]
 
-Options:
-  help            Show This Help Message and Exit 
-  deleteSQS       Deletes SQS Messages Following Read
-  SQSCount        Displays # of Messages in SQS Queue and Exit
-  clearDB         Clears the Database Table of All Rows
+- Options:
+  - help            Show This Help Message and Exit 
+  - deleteSQS       Deletes SQS Messages Following Read
+  - SQSCount        Displays # of Messages in SQS Queue and Exit
+  - clearDB         Clears the Database Table of All Rows
 
   Note: Running with no option will mask and add all records to the database   without deleting them from the SQS queue
 
@@ -31,18 +31,18 @@ If I had more time to flush out this project there are a few things that I may h
   
 ## Deploying in a Production Environment.
 
-- I think that my second bullet point from above is actually a great first step towards bringing this application into a production environment. Automating the application and then creating a Docker image based on it would be a great way to manage dependencies and ease of deployability. It would also make the application easier to scale horizontally if more instances were needed.
+I think that my second bullet point from above is actually a great first step towards bringing this application into a production environment. Automating the application and then creating a Docker image based on it would be a great way to manage dependencies and ease of deployability. It would also make the application easier to scale horizontally if more instances were needed.
 
 ## Scaling with a growing dataset.
 
-- Like I mentioned above, Dockerizing the application would allow for some horizontal scalability, but ultimately if the program needs to run on significantly larger datasets there are some efficiency improvements that I could make such as.
+Like I mentioned above, Dockerizing the application would allow for some horizontal scalability, but ultimately if the program needs to run on significantly larger datasets there are some efficiency improvements that I could make such as.
 
 1. Compressing the masking and storage loops into a single loop so that the dataset is only traversed once. This was something that I did for readability sake given that the dataset in the assignment is fairly small. But merging these two loops would improve program performance on large datasets.
 2. Explore re-writing in a different language. Being interpreted, Python is fairly topheavy, it also has very limited support for true-multithreading which inherently limits paralellization potential. Reconstructing the program in C would allow for better optimization.
 
 ## Recovering PII Data 
 
-- The application uses SHA-256 hashing to obscure data, this makes duplicate values noticable by analysts, while still making data accessible so long as we still have access to the original dataset in some fashion.
+The application uses SHA-256 hashing to obscure data, this makes duplicate values noticable by analysts, while still making data accessible so long as we still have access to the original dataset in some fashion.
 
 ## Assumptions
 
