@@ -17,9 +17,9 @@ The project was designed to be run using python3, it includes 4 primary function
   - SQSCount        Displays # of Messages in SQS Queue and Exit
   - clearDB         Clears the Database Table of All Rows
 
-  Note: Running with no option will mask and add all records to the database   without deleting them from the SQS queue
+  - Note: Running with no option will mask and add all records to the database   without deleting them from the SQS queue
 
-Example:
+- Example:
   python3 AccessScript.py deleteSQS
 
 ## Whats Next?
